@@ -99,6 +99,20 @@ telemetry.addData("Label", value);
 telemetry.update();  // must call update() to push data to DS
 ```
 
+## Log Capture
+
+`capture_logs.sh` (repo root) streams ADB logcat from the Control Hub to a timestamped file during practice sessions.
+
+```bash
+chmod +x capture_logs.sh   # one-time setup
+./capture_logs.sh           # defaults to 192.168.43.1:5555
+./capture_logs.sh 192.168.1.100:5555  # custom IP
+```
+
+Run once at the start of a session; leave the terminal open. Logs are written to `logs/session_YYYYMMDD_HHMMSS.txt`. The script reconnects automatically on connection loss. Press Ctrl+C to stop — it prints the log file path on exit.
+
+The `logs/` directory is gitignored; session files are never committed.
+
 ### Key SDK dependencies (FTC SDK 11.1.0)
 
 - `com.qualcomm.robotcore.hardware.*` — motors, servos, sensors
