@@ -1,0 +1,17 @@
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Python (for scouting/analysis scripts)
+__pycache__/
+*.pyc
+.env
+
+# Logs
+*.log
